@@ -1,0 +1,21 @@
+name: doc
+on:
+  workflow_dispatch:
+
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          ref: 'main'
+          fetch-depth: 0
+
+      - name: Install Aglio
+        run: npm install -g aglio
+
+      - name: Build doc
+        run: |
+          mkdir docs
+          aglio --theme-variables slate -i doc.apib -o docs/index.html
