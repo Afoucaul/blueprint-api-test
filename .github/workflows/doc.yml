@@ -2,6 +2,9 @@ name: doc
 on:
   workflow_dispatch:
 
+  push:
+    branches: [main]
+
 jobs:
   doc:
     runs-on: ubuntu-latest
