@@ -21,7 +21,7 @@ jobs:
       - name: Build doc
         run: |
           mkdir docs
-          aglio --theme-variables slate -i doc.apib -o docs/index.html
+          aglio --theme-variables slate --theme-template triple -i doc.apib -o docs/index.html
 
       - name: Publish doc
         uses: JamesIves/github-pages-deploy-action@v4.2.5
